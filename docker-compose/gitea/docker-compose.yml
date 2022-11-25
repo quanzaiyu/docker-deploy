@@ -1,0 +1,24 @@
+version: "3"
+
+networks:
+  gitea:
+    external: false
+
+services:
+  server:
+    image: gitea/gitea
+    container_name: gitea
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    networks:
+      - gitea
+    volumes:
+      - D:\wsl\docker-desktop-data\gitea\data:/data
+      - D:\wsl\docker-desktop-data\gitea\timezone:/etc/timezone:ro
+      - D:\wsl\docker-desktop-data\gitea\localtime:/etc/localtime:ro
+      - D:\wsl\docker-desktop-data\gitea\.ssh:/data/git/.ssh
+    ports:
+      - "30081:3000"  # web
+      - "30022:22"    # SSH

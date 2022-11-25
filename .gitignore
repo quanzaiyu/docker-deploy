@@ -1,0 +1,7 @@
+kubectl
+minikube-linux-amd64
+
+.temp
+.pnpm-store
+
+boathouse-calculator

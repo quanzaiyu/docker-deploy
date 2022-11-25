@@ -1,0 +1,29 @@
+version: smartide/v0.3
+orchestrator:
+  type: allinone
+  version: 3
+workspace:
+  dev-container:
+    service-name: ide_vscode_all_in_one
+    webide-port: 6800
+
+    ports: # 申明端口
+      tools-webide-vscode: 6800
+      tools-ssh: 6822
+      apps-application: 8000
+
+    ide-type: vscode  #vscode/theia
+    volumes:
+      git-config: true
+      ssh-key: true
+    command:
+      - code --install-extension eamodio.gitlens
+      - code --install-extension lukashass.volar
+      - code --install-extension dbaeumer.vscode-eslint
+      - code --install-extension antfu.unocss
+      - code --install-extension stylelint.vscode-stylelint
+      - nvm use 16.9.1
+      - npm config set registry https://registry.npmmirror.com
+      - npm i -g pnpm
+
+  docker-compose-file: "docker-compose.yaml"
