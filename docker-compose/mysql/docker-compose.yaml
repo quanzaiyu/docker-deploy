@@ -8,13 +8,13 @@ services:
       - "3306:3306"
     volumes:
       # 挂挂载配置文件
-      - ./mysql/db/:/docker-entrypoint-initdb.d
+      - D:\wsl\docker-desktop-data\mysql\db:/docker-entrypoint-initdb.d
       # 挂挂载配置文件
-      - ./mysql/conf:/etc/mysql/conf.d
+      - D:\wsl\docker-desktop-data\mysql\conf:/etc/mysql/conf.d
       # 挂载日志
-      - ./mysql/logs:/logs
+      - D:\wsl\docker-desktop-data\mysql\logs:/logs
       # 挂载数据
-      - ./mysql/data:/var/lib/mysql
+      - D:\wsl\docker-desktop-data\mysql\data:/var/lib/mysql
     command:
       [
         'mysqld',
