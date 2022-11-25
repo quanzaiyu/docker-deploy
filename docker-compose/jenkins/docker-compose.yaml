@@ -1,0 +1,15 @@
+version: '3.1'
+services:
+  jenkins:
+    image: jenkinsci/blueocean
+    volumes:
+      - D:\wsl\docker-desktop-data\jenkins\jenkins_home:/var/jenkins_home
+    ports:
+      - "30080:8080"
+    expose:
+      - "8080"
+      - "50000"
+    privileged: true
+    user: root
+    restart: always
+    container_name: jenkins-blueocean

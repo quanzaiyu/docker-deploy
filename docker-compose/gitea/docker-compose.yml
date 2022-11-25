@@ -1,4 +1,4 @@
-version: "3"
+version: "3.3"
 
 networks:
   gitea:
@@ -20,5 +20,5 @@ services:
       - D:\wsl\docker-desktop-data\gitea\localtime:/etc/localtime:ro
       - D:\wsl\docker-desktop-data\gitea\.ssh:/data/git/.ssh
     ports:
-      - "30081:3000"  # web
-      - "30022:22"    # SSH
+      - "30081:3000" # web
+      - "30022:22" # SSH
