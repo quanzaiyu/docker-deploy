@@ -9,6 +9,6 @@ services:
     ports:
       - 80:80
     volumes:
-      - D:\wsl\docker-desktop-data\nginx\conf\nginx.conf:/etc/nginx/nginx.conf
+      - D:\wsl\docker-desktop-data\nginx\conf\nginx.conf:/etc/nginx/nginx.conf:ro
       - D:\wsl\docker-desktop-data\nginx\www:/usr/share/nginx/html
       - D:\wsl\docker-desktop-data\nginx\logs:/var/log/nginx
